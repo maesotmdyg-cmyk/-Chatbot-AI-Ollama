@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>เว็บไซต์สอบถามข้อมูลด้านคอมพิวเตอร์โดย Chatbot ด้วย AI Ollama</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Inter:wght@300;400;500;600;700&family=Kanit:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <div class="app-container">
+        <!-- Main Content Area -->
+        <main class="main-content" style="display: flex; justify-content: center; align-items: center; padding: 40px;">
+            
+            <section class="view-section active" style="max-width: 800px; text-align: center; background: rgba(0, 5, 10, 0.4); padding: 50px; border-radius: 24px; border: 1px solid rgba(0, 240, 255, 0.3); box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);">
+                <div style="margin-bottom: 30px;">
+                    <img src="images/site-logo.jpg" alt="Site Logo" style="width: 150px; height: 150px; object-fit: cover; border-radius: 50%; box-shadow: 0 0 30px rgba(0, 240, 255, 0.5); border: 3px solid var(--primary);">
+                </div>
+                
+                <h1 style="color: var(--primary); font-size: 36px; margin-bottom: 20px; font-family: 'Orbitron', sans-serif;">AI COMPUTER CHATBOT</h1>
+                <p style="font-size: 18px; color: var(--text-primary); margin-bottom: 40px; line-height: 1.6;">
+                    ยินดีต้อนรับสู่เว็บไซต์เว็บไซต์สอบถามข้อมูลด้านคอมพิวเตอร์โดย Chatbot ด้วย AI Ollama!<br>
+                    ที่นี่เรามีเนื้อหาครอบคลุมตั้งแต่ขั้นตอนพื้นฐาน และ <strong>สุดยอดผู้ช่วย AI ส่วนตัว</strong>
+                </p>
+
+                <div style="background: rgba(255, 0, 234, 0.1); border: 1px solid rgba(255, 0, 234, 0.3); padding: 30px; border-radius: 16px; margin-bottom: 40px; text-align: left;">
+                    <h2 style="color: var(--secondary); font-size: 24px; margin-bottom: 15px;"><i class="fa-solid fa-robot"></i> วิธีใช้งาน AI Chatbot</h2>
+                    <ul style="color: var(--text-primary); line-height: 1.8; margin-left: 20px;">
+                        <li>คลิกที่ปุ่ม <strong>"เปิดผู้ช่วย AI"</strong> ด้านล่าง หรือกดที่ไอคอนหุ่นยนต์มุมขวาล่างของหน้าจอ</li>
+                        <li>คุณสามารถพิมพ์ถามคำถามเกี่ยวกับการประกอบคอมพิวเตอร์ สเปคคอม หรือปัญหาต่างๆ ได้เลย!</li>
+                        <li>หากต้องการเริ่มบทสนทนาใหม่ สามารถกดปุ่มถังขยะ (Reset Chat) ที่มุมขวาบนของแชทได้ทันที</li>
+                    </ul>
+                </div>
+
+                <div style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;">
+                    <button onclick="document.getElementById('chatWidget').classList.add('open')" style="padding: 15px 30px; background: transparent; border: 2px solid var(--secondary); color: white; border-radius: 30px; font-size: 18px; cursor: pointer; transition: all 0.3s ease;" class="hover-btn">
+                        <i class="fa-solid fa-message"></i> เปิดใช้งานผู้ช่วย AI
+                    </button>
+                    
+                    <a href="page1.html" style="padding: 15px 30px; background: linear-gradient(135deg, var(--primary), #3b82f6); color: white; border: none; border-radius: 30px; font-size: 18px; text-decoration: none; display: inline-block; box-shadow: 0 5px 20px rgba(0, 240, 255, 0.4); transition: all 0.3s ease;" class="hover-btn-primary">
+                        <i class="fa-solid fa-rocket"></i> เข้าสู่บทเรียนประกอบคอม
+                    </a>
+                </div>
+            </section>
+
+        </main>
+        
+        <!-- Floating Chat Widget -->
+        <button id="chatFab" class="chat-fab">
+            <i class="fa-solid fa-robot"></i>
+        </button>
+
+        <div id="chatWidget" class="chat-widget">
+            <header class="chat-header">
+                <div class="header-text">
+                    <h1>ผู้ช่วยส่วนตัว</h1>
+                    <p>ถาม-ตอบปัญหาคอมพิวเตอร์</p>
+                </div>
+                <div class="status-indicator">
+                    <div class="dot"></div> Online
+                </div>
+                <div class="chat-header-actions" style="display: flex; gap: 12px; align-items: center;">
+                    <button id="resetChatBtn" class="close-chat-btn" title="ล้างแชท (Reset Chat)"><i class="fa-solid fa-trash-can"></i></button>
+                    <button id="closeChatBtn" class="close-chat-btn" title="ปิดหน้าต่าง"><i class="fa-solid fa-xmark"></i></button>
+                </div>
+            </header>
+            
+            <div class="chat-box" id="chatBox">
+                <!-- Messages will appear here -->
+                <div class="message ai-message">
+                    <div class="avatar"><i class="fa-solid fa-robot"></i></div>
+                    <div class="content">สวัสดีครับ! 🤖 ยินดีต้อนรับสู่หน้าแรก มีอะไรให้ผมช่วยแนะนำไหมครับ?</div>
+                </div>
+            </div>
+
+            <footer class="chat-input-area">
+                <div class="input-wrapper">
+                    <input type="text" id="userInput" placeholder="พิมพ์ข้อความที่นี่..." autocomplete="off">
+                    <button id="sendBtn" class="send-btn"><i class="fa-solid fa-paper-plane"></i></button>
+                    <button id="stopBtn" class="send-btn" style="display: none; color: var(--secondary); border-color: var(--secondary);"><i class="fa-solid fa-square"></i></button>
+                </div>
+            </footer>
+        </div>
+    </div>
+    
+    <script src="script.js?v=4"></script>
+    <style>
+        .hover-btn:hover {
+            background: rgba(255, 0, 234, 0.2) !important;
+            box-shadow: 0 0 20px rgba(255, 0, 234, 0.4);
+            transform: translateY(-2px);
+        }
+        .hover-btn-primary:hover {
+            box-shadow: 0 10px 30px rgba(0, 240, 255, 0.6) !important;
+            transform: translateY(-2px);
+        }
+    </style>
+</body>
+</html>

@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>เว็บไซต์สอบถามข้อมูลด้านคอมพิวเตอร์โดย Chatbot ด้วย AI Ollama</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Inter:wght@300;400;500;600;700&family=Kanit:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="background-animation"></div>
+    <div class="app-container">
+        
+        <!-- Main Content Area -->
+        <main class="main-content">
+            
+            <!-- Home View / Intro -->
+            <section id="home" class="view-section active">
+                <div style="text-align: center; margin-bottom: 30px;">
+                    <img src="images/site-logo.jpg" alt="Site Logo" style="width: 160px; height: 160px; object-fit: cover; border-radius: 50%; box-shadow: 0 10px 20px rgba(0,0,0,0.5); border: 4px solid var(--primary);">
+                </div>
+                <header class="section-header">
+                    <h1>คู่มือประกอบคอมพิวเตอร์ 101</h1>
+                    <p>เรียนรู้วิธีการประกอบคอมพิวเตอร์ด้วยตัวเองอย่างละเอียด ทีละขั้นตอน</p>
+                </header>
+                <div class="article-content">
+                    <img src="https://images.unsplash.com/photo-1587202372634-32705e3bf49c?auto=format&fit=crop&w=1600&q=80" alt="Inside PC Build" class="hero-image">
+                    <h2>ทำไมต้องประกอบคอมเอง?</h2>
+                    <p>การประกอบคอมพิวเตอร์ด้วยตัวเองนอกจากจะได้สเปคที่ตรงใจและคุ้มค่าที่สุดแล้ว ยังช่วยให้เราเข้าใจการทำงานของแต่ละชิ้นส่วน และสามารถอัปเกรดหรือซ่อมแซมเองได้ในอนาคต</p>
+                    <p>ในคู่มือนี้ เราจะพาทุกท่านไปทำความรู้จักกับอุปกรณ์ที่ต้องใช้ และขั้นตอนการประกอบ PC อย่างละเอียด ตั้งแต่การเตรียมของไปจนถึงการเปิดเครื่องใช้งาน เลื่อนลงไปดูได้เลย!</p>
+                </div>
+            </section>
+
+            <!-- Equipment Section -->
+            <section id="equipment" class="view-section">
+                <header class="section-header"><h1>อุปกรณ์ที่ต้องเตรียม</h1></header>
+                <div class="article-content">
+                    <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1600&q=80" alt="PC Components" class="feature-image">
+                    <h2>ส่วนประกอบหลักของคอมพิวเตอร์</h2>
+                    <ul style="text-align: left; padding: 0 40px; margin-bottom: 20px; line-height: 1.8;">
+                        <li><strong>1. CPU (หน่วยประมวลผลกลาง):</strong> สมองของคอมพิวเตอร์ (เช่น Intel Core, AMD Ryzen)</li>
+                        <li><strong>2. Motherboard (เมนบอร์ด):</strong> แผงวงจรหลักที่เชื่อมต่อทุกชิ้นส่วนเข้าด้วยกัน</li>
+                        <li><strong>3. RAM (หน่วยความจำ):</strong> แหล่งพักข้อมูลความเร็วสูง ยิ่งเยอะยิ่งเปิดได้หลายโปรแกรม</li>
+                        <li><strong>4. Storage (ที่เก็บข้อมูล):</strong> SSD M.2 หรือ HDD สำหรับลง Windows และเก็บไฟล์</li>
+                        <li><strong>5. GPU (การ์ดจอ):</strong> ประมวลผลภาพ 3 มิติ สำคัญมากสำหรับเล่นเกมและทำงานกราฟิก</li>
+                        <li><strong>6. PSU (พาวเวอร์ซัพพลาย):</strong> ตัวจ่ายไฟหลัก ต้องเลือกวัตต์ให้พอกับอุปกรณ์ทั้งหมด</li>
+                        <li><strong>7. Case (เคส):</strong> โครงสร้างภายนอกสำหรับยึดทุกอย่างไว้ด้วยกัน</li>
+                        <li><strong>8. เครื่องมือ (Tools):</strong> ไขควงสี่แฉกขนาดพอเหมาะ (แม่เหล็กจะช่วยได้มาก) แผ่นรองกันไฟฟ้าสถิต (ถ้ามี)</li>
+                    </ul>
+                    <p>เมื่อเตรียมอุปกรณ์ครบแล้ว เราก็มาลุยกันเลยครับ!</p>
+                </div>
+            </section>
+
+            <!-- Step 1: CPU -->
+            <section id="step-cpu" class="view-section">
+                <header class="section-header"><h1>ขั้นตอนที่ 1: การติดตั้ง CPU</h1></header>
+                <div class="article-content">
+                    <img src="https://images.unsplash.com/photo-1591799264318-7e6ef8ddb7ea?auto=format&fit=crop&w=1600&q=80" alt="CPU Installation" class="feature-image">
+                    <h2>หัวใจหลักของระบบ</h2>
+                    <p>เริ่มต้นจากการนำเมนบอร์ด (Motherboard) วางบนกล่องกระดาษเพื่อป้องกันไฟฟ้าสถิต จากนั้นปลดล็อคซ็อกเก็ต (Socket) แล้วค่อยๆ วาง CPU ลงไป โดยสังเกตสัญลักษณ์สามเหลี่ยมสีทองที่มุมของ CPU ให้ตรงกับสัญลักษณ์บนซ็อกเก็ต ห้ามกดแรงเด็ดขาด เมื่อวางลงล็อคแล้วให้ปิดฝาและล็อคก้านเหล็กให้แน่น จากนั้นทาซิลิโคนและติดตั้งพัดลมระบายความร้อน</p>
+                </div>
+            </section>
+
+            <!-- Step 2: RAM -->
+            <section id="step-ram" class="view-section">
+                <header class="section-header"><h1>ขั้นตอนที่ 2: การติดตั้ง RAM</h1></header>
+                <div class="article-content">
+                    <img src="images/ram_installation_ai.jpg" alt="RAM Installation" class="feature-image">
+                    <h2>เพิ่มพื้นที่ความจำชั่วคราว</h2>
+                    <p>กดสลักล็อคที่ช่องเสียบ RAM (DIMM Slot) บนเมนบอร์ดให้กางออก จากนั้นสังเกตรอยบากที่แถบทองแดงของ RAM ให้ตรงกับช่องเสียบ แล้วกด RAM ลงไปตรงๆ ด้วยน้ำหนักที่เท่ากันทั้งสองข้าง จนกว่าสลักล็อคจะเด้งกลับมาล็อคเองและได้ยินเสียง 'คลิก'</p>
+                </div>
+            </section>
+
+            <!-- Step 3: Motherboard to Case -->
+            <section id="step-mobo" class="view-section">
+                <header class="section-header"><h1>ขั้นตอนที่ 3: ติดตั้งเมนบอร์ดลงเคส</h1></header>
+                <div class="article-content">
+                    <img src="https://images.unsplash.com/photo-1555680202-c86f0e12f086?auto=format&fit=crop&w=1600&q=80" alt="Motherboard Installation" class="feature-image">
+                    <h2>ย้ายเข้าบ้านใหม่</h2>
+                    <p>ก่อนอื่นให้ติดตั้งแผ่น I/O Shield ที่ช่องด้านหลังของเคส จากนั้นค่อยๆ ยกเมนบอร์ดที่ติดตั้ง CPU และ RAM แล้ววางลงในเคสให้ตรงกับรูน็อต (Standoffs) ขยับให้พอร์ตด้านหลังตรงกับ I/O Shield แล้วไขน็อตยึดเมนบอร์ดให้ครบทุกจุด (แต่อย่าไขแน่นจนเกินไป)</p>
+                </div>
+            </section>
+
+            <!-- Step 4: GPU -->
+            <section id="step-gpu" class="view-section">
+                <header class="section-header"><h1>ขั้นตอนที่ 4: ติดตั้งการ์ดจอ (GPU)</h1></header>
+                <div class="article-content">
+                    <img src="https://images.unsplash.com/photo-1591488320449-011701bb6704?auto=format&fit=crop&w=1600&q=80" alt="GPU Installation" class="feature-image">
+                    <h2>ขุมพลังกราฟิก</h2>
+                    <p>ถอดฝาครอบสล็อต PCIe ที่ด้านหลังเคสออกตามขนาดของการ์ดจอ ปลดล็อคสล็อต PCIe x16 บนเมนบอร์ด แล้วกดการ์ดจอลงไปตรงๆ จนกว่าสลักจะล็อค จากนั้นไขน็อตยึดการ์ดจอเข้ากับตัวเคสเพื่อป้องกันการ์ดจอตกหรือหักงอ</p>
+                </div>
+            </section>
+
+            <!-- Step 5: PSU & Detailed Wiring -->
+            <section id="step-psu" class="view-section">
+                <header class="section-header"><h1>ขั้นตอนที่ 5: การเดินสายไฟแบบละเอียด (Wiring & Cable Management)</h1></header>
+                <div class="article-content">
+                    <img src="https://images.unsplash.com/photo-1614624532983-4ce03382d63d?auto=format&fit=crop&w=1600&q=80" alt="Wiring Details" class="feature-image">
+                    <h2>หัวใจสำคัญที่ห้ามต่อผิด</h2>
+                    <p>การเดินสายไฟคือขั้นตอนที่มือใหม่หลายคนกลัวที่สุด แต่จริงๆ แล้วสายไฟคอมพิวเตอร์ถูกออกแบบมาให้ "เสียบผิดช่องไม่ได้" (ถ้าไม่ฝืนยัด) โดยเราจะแบ่งกลุ่มสายไฟที่ต้องเสียบออกเป็น 2 กลุ่มหลักๆ ดังนี้ครับ:</p>
+                    
+                    <h3 style="color: var(--primary); margin-top: 20px; text-align: left; padding-left: 40px;">กลุ่มที่ 1: สายไฟจากพาวเวอร์ซัพพลาย (PSU)</h3>
+                    <ul style="text-align: left; padding: 0 40px; margin-bottom: 20px; line-height: 1.8;">
+                        <li><strong>สาย 24-pin ATX:</strong> สายเส้นที่ใหญ่และหนาที่สุด มีหัวปลั๊กยาวๆ หน้าที่คือจ่ายไฟให้เมนบอร์ดทั้งแผง ให้เสียบเข้าที่พอร์ตยาวๆ บริเวณ <strong>"ขอบขวาของเมนบอร์ด"</strong> ต้องออกแรงกดเล็กน้อยจนกว่าสลักพลาสติกจะดัง 'แป๊ก'</li>
+                        <li><strong>สาย 8-pin EPS (CPU Power):</strong> สายเส้นนี้มักจะเขียนว่า 'CPU' หน้าที่คือจ่ายไฟให้ชิป CPU โดยตรง ให้เสียบเข้าที่พอร์ต 8-pin (หรือ 4+4 pin) บริเวณ <strong>"มุมซ้ายบนสุดของเมนบอร์ด"</strong> แนะนำให้สอดสายเส้นนี้อ้อมไปด้านหลังเคสแล้วค่อยโผล่ออกมารูบนสุด จะทำให้จัดสายง่ายครับ</li>
+                        <li><strong>สาย 6+2 pin PCIe (VGA Power):</strong> สายสำหรับจ่ายไฟให้การ์ดจอโดยเฉพาะ (มักจะเขียนว่า PCIe หรือ VGA) ให้เสียบเข้าที่พอร์ตบนตัวการ์ดจอ การ์ดจอบางรุ่นอาจต้องใช้ 2 หรือ 3 เส้นประกอบกัน</li>
+                        <li><strong>สาย SATA Power:</strong> สายลักษณะแบนๆ หัวรูปตัว 'L' ใช้สำหรับเสียบจ่ายไฟให้ฮาร์ดดิสก์ (HDD) หรือ SSD แบบ 2.5 นิ้วรุ่นเก่า</li>
+                    </ul>
+
+                    <h3 style="color: var(--primary); margin-top: 20px; text-align: left; padding-left: 40px;">กลุ่มที่ 2: สายไฟจากเคส (Front Panel)</h3>
+                    <p style="text-align: left; padding: 0 40px;">สายกลุ่มนี้จะมาจากแผงด้านหน้าของเคส (ปุ่มเปิดเครื่อง, ปุ่มรีเซ็ต, พอร์ต USB) ซึ่งเป็นจุดที่ต้องใช้สมาธิมากที่สุด ให้เสียบที่แผงเข็มเล็กๆ บริเวณ <strong>"มุมขวาล่างของเมนบอร์ด"</strong> (F_PANEL)</p>
+                    <ul style="text-align: left; padding: 0 40px; margin-bottom: 20px; line-height: 1.8;">
+                        <li><strong>Power SW:</strong> สายปุ่มเปิดเครื่อง (สลับขั้วบวกลบได้)</li>
+                        <li><strong>Reset SW:</strong> สายปุ่มรีสตาร์ท (สลับขั้วบวกลบได้)</li>
+                        <li><strong>Power LED (+ และ -):</strong> ไฟแสดงสถานะเครื่องเปิด (ห้ามสลับขั้ว สีบอกสถานะจะไม่ติด)</li>
+                        <li><strong>HDD LED (+ และ -):</strong> ไฟกะพริบแสดงสถานะฮาร์ดดิสก์อ่าน/เขียนข้อมูล (ห้ามสลับขั้ว)</li>
+                        <li><em>*ข้อควรระวัง: ตำแหน่งของพินแต่ละยี่ห้อบอร์ดจะไม่เหมือนกันเป๊ะๆ ต้องกางคู่มือเมนบอร์ด (Manual) หน้า Front Panel Header ดูประกอบเสมอครับ!</em></li>
+                    </ul>
+
+                    <p><strong>💡 เคล็ดลับการจัดสาย (Cable Management):</strong> พยายามสอดสายไฟทุกเส้นลอดช่องว่างทะลุไปไว้ที่ "ด้านหลังแผ่นรองเมนบอร์ด" ให้หมด เพื่อให้ห้องเครื่องด้านหน้าดูสะอาดตา อากาศไหลเวียนไปเป่าระบายความร้อนการ์ดจอและ CPU ได้สะดวก จากนั้นใช้เคเบิ้ลไทร์ (Cable Tie) มัดรวมสายด้านหลังให้เป็นระเบียบ เป็นอันเสร็จสิ้นพร้อมเปิดเครื่อง!</p>
+                    
+                    <div style="text-align: center; margin-top: 50px;">
+                        <a href="index.html" style="display: inline-block; padding: 15px 30px; margin: 10px; background-color: var(--primary); color: white; text-decoration: none; border-radius: 30px; font-weight: 500; font-size: 16px; transition: all 0.3s ease; box-shadow: 0 5px 15px rgba(56, 189, 248, 0.3);">
+                            <i class="fa-solid fa-house"></i> กลับสู่หน้าแรก (Home)
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+
+        <!-- Floating Chat Widget -->
+        <button id="chatFab" class="chat-fab">
+            <i class="fa-solid fa-robot"></i>
+        </button>
+
+        <div id="chatWidget" class="chat-widget">
+            <header class="chat-header">
+                <div class="header-text">
+                    <h1>ผู้ช่วยส่วนตัว</h1>
+                    <p>ถาม-ตอบปัญหาคอมพิวเตอร์</p>
+                </div>
+                <div class="status-indicator">
+                    <div class="dot"></div> Online
+                </div>
+                <div class="chat-header-actions" style="display: flex; gap: 12px; align-items: center;">
+                    <button id="resetChatBtn" class="close-chat-btn" title="ล้างแชท (Reset Chat)"><i class="fa-solid fa-trash-can"></i></button>
+                    <button id="closeChatBtn" class="close-chat-btn" title="ปิดหน้าต่าง"><i class="fa-solid fa-xmark"></i></button>
+                </div>
+            </header>
+            
+            <div class="chat-box" id="chatBox">
+                <!-- Messages will appear here -->
+                <div class="message ai-message">
+                    <div class="avatar"><i class="fa-solid fa-robot"></i></div>
+                    <div class="content">สวัสดีครับ! 🤖 มีอะไรให้ผมช่วยแนะนำเกี่ยวกับคอมพิวเตอร์ไหมครับ?</div>
+                </div>
+            </div>
+
+            <footer class="chat-input-area">
+                <div class="input-wrapper">
+                    <input type="text" id="userInput" placeholder="พิมพ์ข้อความที่นี่..." autocomplete="off">
+                    <button id="sendBtn" class="send-btn"><i class="fa-solid fa-paper-plane"></i></button>
+                    <button id="stopBtn" class="send-btn" style="display: none; color: var(--secondary); border-color: var(--secondary);"><i class="fa-solid fa-square"></i></button>
+                </div>
+            </footer>
+        </div>
+    </div>
+    
+    <!-- Marked library for parsing markdown -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="script.js?v=3"></script>
+</body>
+</html>
